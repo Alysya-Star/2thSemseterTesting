@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: abc00000000010279898351094899134
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271318
+  packageName: Modular Castle & Dungeon (Medieval Castle, Castles, Dungeons, Dungeon,
+    Castle)
+  packageVersion: 1.0
+  assetPath: Assets/Hivemind/CastleOfEternalMists/HDRP/Art/Materials/Instances/MI_Volumetric_GroundFOG.mat
+  uploadId: 665427

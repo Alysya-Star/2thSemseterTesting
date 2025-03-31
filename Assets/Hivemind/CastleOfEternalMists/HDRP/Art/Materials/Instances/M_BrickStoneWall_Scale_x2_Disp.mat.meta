@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: abc00000000002452220075400409227
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271318
+  packageName: Modular Castle & Dungeon (Medieval Castle, Castles, Dungeons, Dungeon,
+    Castle)
+  packageVersion: 1.0
+  assetPath: Assets/Hivemind/CastleOfEternalMists/HDRP/Art/Materials/Instances/M_BrickStoneWall_Scale_x2_Disp.mat
+  uploadId: 665427

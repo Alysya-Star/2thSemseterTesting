@@ -1,16 +1,49 @@
 using UnityEngine;
 
-public class MapBase : MonoBehaviour
+namespace ProceduraleGeneration.Dungeon_Maze.Scripts
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class MapBase : MonoBehaviour
     {
+        [SerializeField] GameObject wallPrefab;
+        [Header("Map Settings")] 
+        [SerializeField] int mapWidth = 10;
+        [SerializeField] int mapDepth = 10;
+        private Vector3 startPosition = new Vector3(1, 0, 1);
+        private int[,] map;
         
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void Start()
+        {
+            IntilizedMap();
+            DrawMap();
+        }
+
+        private void IntilizedMap()
+        {
+            map = new int[mapWidth, mapDepth];
+            for (var z = 0; z < mapDepth; z++)
+            {
+                for (var x = 0; x < mapWidth; x++)
+                {
+                  map[x, z] = (int)roomTypes.start;
+                    
+                }
+            }
+        }
+
+        private void DrawMap()
+        {
+            for (var z = 0; z < mapDepth; z++)
+            {
+                for (var x = 0; x < mapWidth; x++)
+                {
+                    if (map[x, z] == 0)
+                    {
+                        var position = new Vector3(x * 6, 0, z * 6);
+                        var wall = Instantiate(wallPrefab, position, Quaternion.identity, transform);
+                    }
+                }
+            }
+        }
     }
 }

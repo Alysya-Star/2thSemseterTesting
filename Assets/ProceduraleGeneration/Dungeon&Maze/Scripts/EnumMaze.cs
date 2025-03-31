@@ -1,16 +1,12 @@
 using UnityEngine;
 
-public class EnumMaze : MonoBehaviour
+namespace ProceduraleGeneration.Dungeon_Maze.Scripts
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public enum roomTypes
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        start =0,
+        corridor =1,
+        room=2
+        // TODO: fuer die verschiedene Raeume prefabs erstellen.
     }
 }

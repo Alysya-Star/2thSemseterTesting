@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: f0dee65d044de434c9f37f65708c2984
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 271318
+  packageName: Modular Castle & Dungeon (Medieval Castle, Castles, Dungeons, Dungeon,
+    Castle)
+  packageVersion: 1.0
+  assetPath: Assets/Hivemind/CastleOfEternalMists/HDRP/Art/Meshes/Tower/Damage/Materials/MI_StoneDamage.mat
+  uploadId: 665427

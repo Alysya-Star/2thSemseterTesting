@@ -5,12 +5,17 @@ namespace ProceduraleGeneration.Dungeon_Maze.Scripts
     public class MapBase : MonoBehaviour
     {
         [SerializeField] GameObject wallPrefab;
-        [Header("Map Settings")] 
-        [SerializeField] int mapWidth = 10;
-        [SerializeField] int mapDepth = 10;
-        private Vector3 startPosition = new Vector3(1, 0, 1);
-        private int[,] map;
-        
+        [SerializeField] GameObject testing;
+
+        [Header("Map Settings")]
+        // Noch in Random um aendern
+        [SerializeField]
+        [Range(15f, 50f)]
+        public int mapWidth;
+
+        [SerializeField] [Range(15f, 50f)]public int mapDepth;
+        protected int startPosX = 1, startPosZ = 1;
+        public int[,] map;
 
         public void Start()
         {
@@ -25,10 +30,18 @@ namespace ProceduraleGeneration.Dungeon_Maze.Scripts
             {
                 for (var x = 0; x < mapWidth; x++)
                 {
-                  map[x, z] = (int)roomTypes.start;
-                    
+                    if (z == 0 || z == mapDepth - 1 || x == 0 || x == mapWidth - 1)
+                    {
+                        map[x, z] = (int)roomTypes.border;
+                    }
+                    else
+                    {
+                        map[x, z] = (int)roomTypes.corridor;
+                    }
                 }
             }
+
+            map[startPosX, startPosZ] = (int)roomTypes.start;
         }
 
         private void DrawMap()
@@ -37,10 +50,15 @@ namespace ProceduraleGeneration.Dungeon_Maze.Scripts
             {
                 for (var x = 0; x < mapWidth; x++)
                 {
-                    if (map[x, z] == 0)
+                    if (map[x, z] == (int)roomTypes.border)
                     {
-                        var position = new Vector3(x * 6, 0, z * 6);
+                        var position = new Vector3(x * 10, 0, z * 10);
                         var wall = Instantiate(wallPrefab, position, Quaternion.identity, transform);
+                    }
+                    else if(map[x, z] == (int)roomTypes.corridor)
+                    {
+                        var position = new Vector3(x * 10, 0, z * 10);
+                        var test = Instantiate(testing, position, Quaternion.identity, transform);
                     }
                 }
             }

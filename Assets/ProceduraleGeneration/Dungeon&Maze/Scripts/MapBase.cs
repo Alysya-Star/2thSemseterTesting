@@ -9,13 +9,11 @@ namespace ProceduraleGeneration.Dungeon_Maze.Scripts
 
         [Header("Map Settings")]
         // Noch in Random um aendern
-        [SerializeField]
-        [Range(15f, 50f)]
-        public int mapWidth;
-
+        [SerializeField] [Range(15f, 50f)] public int mapWidth;
         [SerializeField] [Range(15f, 50f)]public int mapDepth;
+        [SerializeField] [Range(15f, 50f)]public int mapHeight;
         protected int startPosX = 1, startPosZ = 1;
-        public int[,] map;
+        public int[,,] map;
 
         public void Start()
         {
@@ -25,7 +23,7 @@ namespace ProceduraleGeneration.Dungeon_Maze.Scripts
 
         private void IntilizedMap()
         {
-            map = new int[mapWidth, mapDepth];
+            map = new int[mapWidth, mapHeight,mapDepth];
             for (var z = 0; z < mapDepth; z++)
             {
                 for (var x = 0; x < mapWidth; x++)
